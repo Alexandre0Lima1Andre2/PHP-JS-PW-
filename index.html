@@ -6,6 +6,8 @@
     <title>Sistemas de cadastro de pessoas</title>
 </head>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
     body{
         height: 100vh;
         display: flex;
@@ -15,8 +17,10 @@
     }
     button{
         background-color: blueviolet;
-        height: 50px;
-        width: 100px;
+        height: 100px;
+        width: 350px;
+        font-size: 40px;
+        border: solid 5px;
     }
     #fundo{
         background-color: blueviolet;
@@ -28,12 +32,14 @@
         margin: 20px;
         font-family: Arial, Helvetica, sans-serif;
         color: white ;
+        font-family: "Rye", serif;
+        font-size: 20px;
     }
     
 </style>
 <body>
     
-    <div class="btn">
+    <div class="btn" id="btn-consulta">
         <button onclick="consulta()">
             Consultar
         </button>
@@ -42,6 +48,7 @@
 
     <script>
         function consulta(){
+            const btn = document.getElementById('btn-consulta');
             let requisicao = new XMLHttpRequest();
             requisicao.open("POST", "controllerPessoa.php?acao=consultar");
             requisicao.send();
@@ -65,6 +72,7 @@
                     </div>`;
                 }
                 document.getElementById('res').innerHTML = res;
+                btn.style.display = 'hiden'
             }
 
         }
