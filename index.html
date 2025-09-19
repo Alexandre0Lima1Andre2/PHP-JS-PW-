@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de cadastro de pessoas</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    button{
+        background-color: blueviolet;
+        height: 50px;
+        width: 100px;
+    }
+    #fundo{
+        background-color: blueviolet;
+        padding: 30px;
+        font-size: 30px;
+        border-radius: 20px;
+    }
+    .txt{
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white ;
+    }
+    
+</style>
+<body>
+    
+    <div class="btn">
+        <button onclick="consulta()">
+            Consultar
+        </button>
+    </div>
+    <p id="res"></p>
+
+    <script>
+        function consulta(){
+            let requisicao = new XMLHttpRequest();
+            requisicao.open("POST", "controllerPessoa.php?acao=consultar");
+            requisicao.send();
+
+            requisicao.onload = function(){
+                let organizacao = JSON.parse(this.responseText)   
+                let res = ""      
+                // document.getElementById('res').innerHTML = this.responseText;
+                for(i = 0; i < organizacao.length ; i++){
+                    res = `
+                    <div id="fundo">
+                        <div class="txt">
+                            Nome: ${organizacao[i].nome}
+                        </div>
+                        <div class="txt">
+                            CPF: ${organizacao[i].cpf}
+                        </div>
+                        <div class="txt">
+                            Senha: ${organizacao[i].senha}
+                        </div> 
+                    </div>`;
+                }
+                document.getElementById('res').innerHTML = res;
+            }
+
+        }
+    </script>
+</body>
+</html>
