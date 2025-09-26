@@ -1,4 +1,4 @@
-CREATE DATABASE cadastropessoa;
+CREATE DATABASE IF NOT EXISTS cadastropessoa;
 
 use cadastropessoa;
 
