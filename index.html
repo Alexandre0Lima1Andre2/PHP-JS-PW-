@@ -10,83 +10,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 
-    body{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: linear-gradient(170deg, #8a2be2,#504252);
-        /* background: linear-gradient(45deg, #fff,#f7f7); */
-    }
-    button{
-        background: linear-gradient(120deg, #8a2be2, purple);
-        font-family: "Rye", serif;
-        color: white;
-        border-radius: 20px;
-        height: 50px;
-        width: 120px;
-        font-size: 18px;
-        border: solid 2px white;
-    }
-    #fundo{
-        background-color: blueviolet;
-        background: linear-gradient(120deg, blueviolet, purple);
-        padding: 30px;
-        font-size: 30px;
-        border-radius: 10px;
-    }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle at top left, #3b1a4a, #8a2be2 80%);
+    font-family: "Rye", serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
 
-    .btn > p {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10px 0;
-    }
+/* Botões gerais */
+button {
+    background: linear-gradient(120deg, #8a2be2, #5b0ca3);
+    font-family: "Rye", serif;
+    color: #fff;
+    border-radius: 25px;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin: 8px;
+}
 
-    p > label {
-        font-family: "Limelight", sans-serif;
-        font-size: 24px;
-        width: 10%;
-    }
+button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(120deg, #a84cff, #7a1cc2);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
 
-    p > input {
-        border-radius: 5px;
-        height: 30px;
-        width: 70%;
-    }
-    
+/* Container principal (login) */
+#inicio {
+    background: linear-gradient(135deg, #6a0dad, #3b1a4a);
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 350px;
+}
 
-    .fundo{
-        display: flex;
-        flex-direction: column;
-        background-color: blueviolet;
-        background: linear-gradient(120deg, blueviolet, purple);
-        padding: 28px;
-        font-size: 25px;
-        border-radius: 10px;
-        color: white;   
-        border: solid  white;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    .txt{
-        margin: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        font-family: "Rye", serif;
-        font-size: 20px;
-    }
+#inicio p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
 
-    #inicio{
-        display: block;
-    }
+#inicio label {
+    font-family: "Limelight", sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
 
-    .btn{
-        display: none;
-    }
-    
+#inicio input {
+    border-radius: 8px;
+    height: 35px;
+    width: 65%;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#inicio input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 12px #fff;
+}
+
+/* Painéis após login */
+.btn {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #4b0082, #7b1fa2);
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    width: 500px;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Campos dentro das divs btn-consulta */
+.btn .fundo {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.btn p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.btn label {
+    font-family: "Limelight", sans-serif;
+    font-size: 20px;
+    color: #fff;
+    width: 30%;
+    text-align: left;
+}
+
+.btn input {
+    border-radius: 10px;
+    height: 38px;
+    width: 65%;
+    border: 2px solid #fff;
+    padding: 6px 12px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.btn input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Texto de resposta */
+#res {
+    margin-top: 25px;
+    font-family: "Rye", serif;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+#opcao {
+    display: none;
+    margin-bottom: 20px;
+}
+
 </style>
+
 <body>
     <div id="inicio">
         <p id="p_ini">
@@ -101,6 +178,16 @@
             <button onclick="logar()">Logar</button>
         </p>
     </div>
+
+    <div id="opcao">
+        <button onclick="document.getElementById('btn-consulta').style.display='block';
+                         document.getElementById('btn-consulta-agenda').style.display='none';">
+            Gerenciar Pessoas
+        </button>
+        <button onclick="document.getElementById('btn-consulta-agenda').style.display='block';
+                         document.getElementById('btn-consulta').style.display='none';">
+            Gerenciar Agenda
+        </button>
 
     <div class="btn" id="btn-consulta">
         <div class="fundo">
@@ -136,6 +223,37 @@
     </div>
     <p id="res"></p>
 
+    <div class="btn" id="btn-consulta-agenda">
+        <div class="fundo">
+            <p>
+                <label for="">CPF: </label>
+                <input type="text" id="cpf" minlength="14" maxlength="14">
+            </p>
+            <p>
+                <label for="">DATA: </label>
+                <input type="date" id="data">
+            </p>
+            <p>
+                <label for="">Descrição: </label>
+                <input type="text" id="desc" maxlength="100">
+            </p>
+            
+        </div>
+        <button onclick="inserir_agenda()">
+            Inserir
+        </button>
+        <button onclick="consultar_agenda()">
+            Consultar
+        </button>
+        <button onclick="deletar_agenda()">
+            Deletar
+        </button>
+        <button onclick="atualizar_agenda()">
+            atualizar
+        </button>
+    </div>
+    <p id="res"></p>
+
     <script>
 
         function logar(){
@@ -147,13 +265,17 @@
             requisicao.send();
 
             requisicao.onload = function(){
-                
                 let organizacao = JSON.parse(this.responseText)   
                 if(organizacao.length > 0){
                     document.getElementById('inicio').style.display = 'none';
-                    document.getElementById('btn-consulta').style.display = 'block';
+                    document.getElementById('opcao').style.display = 'block';
                 }
+            
             }
+        }
+
+        function opcao(){
+            
         }
 
         function inserir(){
@@ -214,6 +336,7 @@
                 document.getElementById('res').innerHTML = this.responseText;
             }
         }
+
         function atualizar(){
 
             let requisicao = new XMLHttpRequest();
@@ -231,6 +354,80 @@
             }
         }
 
+        function inserir_agenda(){
+
+            let requisicao = new XMLHttpRequest();
+
+            let cpf = document.getElementById('cpf').value;
+            let data = document.getElementById('data').value;
+            let descricao = document.getElementById('desc').value;
+
+            requisicao.open("GET", `controllerAgenda.php?cpf=${cpf}&data=${data}&descricao=${descricao}&acao=inserir`);
+            requisicao.send();
+
+            requisicao.onload = function(){
+                document.getElementById('res').innerHTML = this.responseText;
+            }
+        }
+
+        function consultar_agenda(){
+
+            const btn = document.getElementById('btn-consulta-agenda');
+            let requisicao = new XMLHttpRequest();
+            requisicao.open("POST", "controllerAgenda.php?acao=consultar");
+            requisicao.send();
+
+            requisicao.onload = function(){
+                let organizacao = JSON.parse(this.responseText)   
+                let res = ""      
+                for(i = 0; i < organizacao.length ; i++){
+                    res = `
+                    <div id="fundo">
+                        <div class="txt">
+                            CPF: ${organizacao[i].cpf}
+                        </div>
+                        <div class="txt">
+                            Data: ${organizacao[i].data}
+                        </div>
+                        <div class="txt">
+                            Descrição: ${organizacao[i].descricao}
+                        </div> 
+                    </div>`;
+                }
+                document.getElementById('res').innerHTML = res;
+                btn.style.display = 'hiden'
+            }
+        }
+
+        function deletar_agenda(){
+
+            let requisicao = new XMLHttpRequest();
+
+            let cpf = document.getElementById('cpf').value;
+
+            requisicao.open("GET", `controllerAgenda.php?cpf=${cpf}&acao=apagar`);
+            requisicao.send();
+
+            requisicao.onload = function(){
+                document.getElementById('res').innerHTML = this.responseText;
+            }
+        }
+
+        function atualizar_agenda(){
+
+            let requisicao = new XMLHttpRequest();
+
+            let cpf = document.getElementById('cpf').value;
+            let data = document.getElementById('data').value;
+            let descricao = document.getElementById('desc').value;
+
+            requisicao.open("GET", `controllerAgenda.php?cpf=${cpf}&data=${data}&descricao=${descricao}&acao=atualizar`);
+            requisicao.send();
+
+            requisicao.onload = function(){
+                document.getElementById('res').innerHTML = this.responseText;
+            }
+        }
     </script>
 </body>
 </html>
