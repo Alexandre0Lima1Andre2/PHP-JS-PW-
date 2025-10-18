@@ -23,7 +23,7 @@ body {
     color: white;
 }
 
-/* Botões gerais */
+
 button {
     background: linear-gradient(120deg, #8a2be2, #5b0ca3);
     font-family: "Rye", serif;
@@ -45,7 +45,6 @@ button:hover {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
-/* Container principal (login) */
 #inicio {
     background: linear-gradient(135deg, #6a0dad, #3b1a4a);
     padding: 40px 50px;
@@ -87,7 +86,7 @@ button:hover {
     box-shadow: 0 0 12px #fff;
 }
 
-/* Painéis após login */
+
 .btn {
     display: none;
     flex-direction: column;
@@ -106,15 +105,23 @@ button:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Campos dentro das divs btn-consulta */
+
 .btn .fundo {
     background: linear-gradient(135deg, #6a1b9a, #8e24aa);
     padding: 25px;
     border-radius: 15px;
     border: 2px solid #fff;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-    width: 100%;
+    width: 80%;
+    margin: 0 auto; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.btn .fundo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
 
 .btn p {
     display: flex;
@@ -149,7 +156,7 @@ button:hover {
     box-shadow: 0 0 10px #fff;
 }
 
-/* Texto de resposta */
+
 #res {
     margin-top: 25px;
     font-family: "Rye", serif;
@@ -157,9 +164,14 @@ button:hover {
     font-size: 18px;
     text-align: center;
 }
+
 #opcao {
     display: none;
     margin-bottom: 20px;
+}
+
+#btn-consulta-agenda{
+    display: none;
 }
 
 </style>
@@ -180,14 +192,9 @@ button:hover {
     </div>
 
     <div id="opcao">
-        <button onclick="document.getElementById('btn-consulta').style.display='block';
-                         document.getElementById('btn-consulta-agenda').style.display='none';">
-            Gerenciar Pessoas
-        </button>
-        <button onclick="document.getElementById('btn-consulta-agenda').style.display='block';
-                         document.getElementById('btn-consulta').style.display='none';">
-            Gerenciar Agenda
-        </button>
+        <button id="op_pessoa" onclick="opcao('pessoa')">Pessoa</button>
+        <button id="op_agenda" onclick="opcao('agenda')">Agenda</button>
+    </div>
 
     <div class="btn" id="btn-consulta">
         <div class="fundo">
@@ -274,7 +281,13 @@ button:hover {
             }
         }
 
-        function opcao(){
+        function opcao(op){
+            if(op == 'pessoa'){
+                document.getElementById('btn-consulta').style.display = 'block';
+            } else if(op == 'agenda'){
+                document.getElementById('btn-consulta-agenda').style.display = 'block';
+            }
+            document.getElementById('opcao').style.display = 'none';
             
         }
 
