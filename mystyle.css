@@ -78,6 +78,11 @@ button:hover {
     box-shadow: 0 0 12px #fff;
 }
 
+#opcao{
+    display: none;
+    margin-bottom: 20px;
+}
+
 /* Container secundário */
 .btn {
     display: none;
@@ -156,8 +161,8 @@ button:hover {
 }
 
 /* Elementos específicos */
-#opcao {
-    display: block;
+#opcao{
+    display: none;
     margin-bottom: 20px;
 }
 
@@ -182,4 +187,10 @@ button:hover {
 }
 h1{
     margin-left: 25%;
+}
+#btn-cad{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
 }

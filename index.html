@@ -9,21 +9,21 @@
 </head>
 
 <body>
-    <!-- <div id="inicio">
+    <div id="inicio">
         <p id="p_ini">
-            <label for="">Usuário </label>
-            <input type="text" id="cpf">
+            <label for="">CPF</label>
+            <input type="text" id="user_cpf" minlength="14" maxlength="14">
         </p>
         <p id="p_ini">
             <label for="">Senha </label>
-            <input type="text" id="senha">
+            <input type="password" id="user_senha">
         </p>
-        <p id="p_ini">
+        <div id="btn-cad">
             <button onclick="logar()">Logar</button>
-        </p>
-    </div> -->
+        </div>
+    </div>
 
-    <div id="opcao">
+    <div id="opcao" style="display: none;">
         <button id="op_pessoa" onclick="opcao('pessoa')">Pessoa</button>
         <button id="op_agenda" onclick="opcao('agenda')">Agenda</button>
     </div>
@@ -87,20 +87,21 @@
     </div>
 
     <script>
-        // function logar(){
-        //     let cpf = document.getElementById('cpf').value;
-        //     let senha = document.getElementById('senha').value;
-        //     let requisicao = new XMLHttpRequest();
-        //     requisicao.open("POST", `controllerPessoa.php?cpf=${cpf}&senha=${senha}&acao=validaPessoa`);
-        //     requisicao.send();
-        //     requisicao.onload = function(){
-        //         let organizacao = JSON.parse(this.responseText)   
-        //         if(organizacao.length > 0){
-        //             document.getElementById('inicio').style.display = 'none';
-        //             document.getElementById('opcao').style.display = 'block';
-        //         }
-        //     }
-        // }
+         function logar(){
+             let cpf = document.getElementById('user_cpf').value;
+             let senha = document.getElementById('user_senha').value;
+             let requisicao = new XMLHttpRequest();
+             requisicao.open("POST", `controllerPessoa.php?cpf=${cpf}&senha=${senha}&acao=validaPessoa`);
+             requisicao.send();
+             requisicao.onload = function(){
+                 let organizacao = JSON.parse(this.responseText)   
+                 if(organizacao.length > 0){
+                     document.getElementById('inicio').style.display = 'none';
+                     document.getElementById('p_ini').style.display = 'none';
+                     document.getElementById('opcao').style.display = 'block';
+                 }
+             }
+         }
 
         function opcao(op){
             if(op == 'pessoa'){
