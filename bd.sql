@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS cadastropessoa;
 CREATE DATABASE IF NOT EXISTS cadastropessoa;
 
 use cadastropessoa;
@@ -17,3 +18,5 @@ create table agenda(
 );
 
 alter table pessoa add senha varchar(20) not null;
+
+insert into pessoa values ("11111111111111","Alex","1111111111","senha");
