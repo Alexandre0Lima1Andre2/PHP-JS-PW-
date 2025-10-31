@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle at top left, #3b1a4a, #8a2be2 80%);
+    font-family: "Rye", serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Botões gerais */
+button {
+    background: linear-gradient(120deg, #8a2be2, #5b0ca3);
+    font-family: "Rye", serif;
+    color: #fff;
+    border-radius: 25px;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin: 8px;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(120deg, #a84cff, #7a1cc2);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Container principal (login) */
+#inicio {
+    background: linear-gradient(135deg, #6a0dad, #3b1a4a);
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 350px;
+}
+
+#inicio p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#inicio label {
+    font-family: "Limelight", sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+#inicio input {
+    border-radius: 8px;
+    height: 35px;
+    width: 65%;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#inicio input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 12px #fff;
+}
+
+/* Container secundário */
+.btn {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #4b0082, #7b1fa2);
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    width: 500px;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn .fundo {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: 0 auto; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn .fundo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+.btn p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.btn label {
+    font-family: "Limelight", sans-serif;
+    font-size: 20px;
+    color: #fff;
+    width: 30%;
+    text-align: left;
+}
+
+.btn input {
+    border-radius: 10px;
+    height: 38px;
+    width: 65%;
+    border: 2px solid #fff;
+    padding: 6px 12px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.btn input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Resultado */
+#res {
+    margin-top: 25px;
+    font-family: "Rye", serif;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Elementos específicos */
+#opcao {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#btn-consulta-agenda {
+    display: none;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+#btns-pessoa{
+    display: none;
+}
+#btns-agenda{
+    display: none;
+}
+h1{
+    margin-left: 25%;
+}
